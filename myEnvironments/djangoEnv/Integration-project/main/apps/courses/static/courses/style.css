@@ -1,0 +1,62 @@
+input{
+	display: block;
+	margin-bottom: 20px;
+}
+textarea{
+	display: block;
+	margin-bottom: 30px;
+}
+.no{
+	display: inline-block;
+	width: 100px;
+	height: 18px;
+
+}
+.no:hover{
+	
+	background-color: red;
+}
+
+.red{
+	display: inline-block;
+	width: 200px;
+	height: 18px;
+
+}
+.red:hover{
+	background-color: red;
+
+}
+#wrapper {
+	width: 1070px;
+	margin: 0px auto;
+	padding: 5px;
+    color: black;
+}
+#submitadd {
+	margin-left: 1000px;
+}
+#formid {
+	display: inline-block;
+	margin: 10px;
+}
+#centralize {
+	margin-top: 100px;
+}
+#line {
+	height: 80px;
+	width: 1000px;
+	border-radius: 5px;
+}
+#user, #course, #adduser {
+	display: inline-block;
+	margin: 15px 25px 15px 0px;
+	padding: 5px;
+}
+#box {
+	margin-left: 900px;
+}
+div{
+	display: inline-block;
+	margin-left: 10px;
+}

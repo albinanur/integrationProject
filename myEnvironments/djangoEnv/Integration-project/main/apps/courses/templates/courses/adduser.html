@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'courses/style.css' %}"media="screen" title="no title"  charset="utf-8">
+        
+        <title>Add Users to Courses</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <form action="/" method="get">
+            {% csrf_token %}
+            <input  type="submit" value="See Courses" id="box"></form>
+            <h1>Add Users to Courses</h1>
+            <div id="line">
+                <div id='user'>
+                    <form action="/adduser" method="POST">
+                        {% csrf_token %}
+                        <select name="user">
+                            <option selected="selected" disabled="disabled">Users</option>
+                            {% for user in users %}
+                            <option value="{{user.id}}">{{user.first_name}}</option>
+                            {% endfor %}
+                        </select>
+                </div>
+                <div id="course">
+                    <select name="course">
+                        <option selected="selected" disabled="disabled">Course</option>
+                    {% for course in courses %}
+                        <option value="{{course.id}}">{{course.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div id="adduser">
+                    <input type="submit" value="Add User to Course">
+                </div>
+                    </form>
+            </div>
+                <table class="table">
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Course Description</th>
+                        <th>Number of Users</th>
+                    </tr>
+                    <td>
+                        {% for course in courses %}
+                        <p>{{ course.name }}</p>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for course in courses %}
+                        <p>{{ course.description }}</p>
+                        {% endfor %}
+                    </td>
+
+                    <td>
+                        {% for count in counts %}
+                        <p>{{ count.num }}</p>
+                        {% endfor %}
+                    </td>
+   
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
